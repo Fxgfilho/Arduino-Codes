@@ -1,0 +1,27 @@
+// C++ code
+//
+
+#define LED_RED 12 
+
+// define -> a variável tem aquele valor determinado para todo o código
+
+int LED_GREEN = 11; 
+
+void setup()
+{
+  pinMode(LED_RED, OUTPUT);
+  pinMode(LED_GREEN, OUTPUT);
+}
+
+void loop()
+{
+  digitalWrite(LED_RED, HIGH);
+  delay(1000); // Wait for 1000 millisecond(s)
+  digitalWrite(LED_RED, LOW);
+  delay(1000); // Wait for 1000 millisecond(s)
+  
+  digitalWrite(LED_GREEN, HIGH);
+  delay(1000); // Wait for 1000 millisecond(s)
+  digitalWrite(LED_GREEN, LOW);
+  delay(1000); // Wait for 1000 millisecond(s)
+}
