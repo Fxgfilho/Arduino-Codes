@@ -1,0 +1,31 @@
+// C++ code
+// Curso: Engenharia de Controle e Automação
+// Aluno: Fábio Xavier Guedes Filho
+// Data: 25/04/2022
+
+#define LED_1 10
+#define LED_2 11
+#define LED_3 12
+#define LED_4 13
+
+
+void setup()
+{
+  pinMode(LED_1, OUTPUT);
+  pinMode(LED_2, OUTPUT);
+  pinMode(LED_3, OUTPUT);
+  pinMode(LED_4, OUTPUT);
+}
+
+void loop()
+{
+  escolherLed(LED_2); // Coloca entre parenteses o led que quer acender
+}
+
+void escolherLed(const int LED)
+{
+  digitalWrite(LED, HIGH);
+  delay(1000);
+  digitalWrite(LED, LOW);
+  delay(1000);
+}
