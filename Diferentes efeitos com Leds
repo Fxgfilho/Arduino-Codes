@@ -1,0 +1,99 @@
+// C++ code
+// Curso: Engenharia de Controle e Automação
+// Aluno: Fábio Xavier Guedes Filho
+// Data: 25/04/2022
+
+#define LED_1 10
+#define LED_2 11
+#define LED_3 12
+#define LED_4 13
+
+void setup()
+{
+  pinMode(LED_1, OUTPUT);
+  pinMode(LED_2, OUTPUT);
+  pinMode(LED_3, OUTPUT);
+  pinMode(LED_4, OUTPUT);
+}
+
+void loop()
+{
+  primeiroEfeito();
+  segundoEfeito();
+  terceiroEfeito();
+  quartoEfeito();
+}
+
+void primeiroEfeito() // Os leds irão piscas de forma alternada
+{
+  digitalWrite(LED_1, HIGH);
+  delay(1000); // Wait for 1000 millisecond(s)
+  digitalWrite(LED_1, LOW);
+  delay(1000); // Wait for 1000 millisecond(s)
+  
+  digitalWrite(LED_2, HIGH);
+  delay(1000); // Wait for 1000 millisecond(s)
+  digitalWrite(LED_2, LOW);
+  delay(1000); // Wait for 1000 millisecond(s)
+  
+  digitalWrite(LED_3, HIGH);
+  delay(1000); // Wait for 1000 millisecond(s)
+  digitalWrite(LED_3, LOW);
+  delay(1000); // Wait for 1000 millisecond(s)
+  
+  digitalWrite(LED_4, HIGH);
+  delay(1000); // Wait for 1000 millisecond(s)
+  digitalWrite(LED_4, LOW);
+  delay(1000); // Wait for 1000 millisecond(s)
+}
+
+void segundoEfeito() // Todos os leds irão acender e apagar a cada 1s 
+{
+  digitalWrite(LED_1, HIGH);
+  digitalWrite(LED_2, HIGH);
+  digitalWrite(LED_3, HIGH);
+  digitalWrite(LED_4, HIGH);
+  delay(1000);
+  digitalWrite(LED_1, LOW);
+  digitalWrite(LED_2, LOW);
+  digitalWrite(LED_3, LOW);
+  digitalWrite(LED_4, LOW);
+  delay(1000);
+}
+
+void terceiroEfeito() // Cada um acende a cada 1s e, quando todos acenderem, apagam
+{
+  digitalWrite(LED_1, HIGH);
+  delay(1000);
+  digitalWrite(LED_2, HIGH);
+  delay(1000);
+  digitalWrite(LED_3, HIGH);
+  delay(1000);
+  digitalWrite(LED_4, HIGH);
+  delay(1000);
+  digitalWrite(LED_1, LOW);
+  digitalWrite(LED_2, LOW);
+  digitalWrite(LED_3, LOW);
+  digitalWrite(LED_4, LOW);
+  delay(1000);
+}
+
+void quartoEfeito() // Os leds acendem e apagam de forma alternada
+{
+  digitalWrite(LED_4, HIGH);
+  delay(1000);
+  digitalWrite(LED_1, HIGH);
+  delay(1000);
+  digitalWrite(LED_3, HIGH);
+  delay(1000);
+  digitalWrite(LED_2, HIGH);
+  delay(1000);
+  digitalWrite(LED_2, LOW);
+  delay(1000);
+  digitalWrite(LED_3, LOW);
+  delay(1000);
+  digitalWrite(LED_1, LOW);
+  delay(1000);
+  digitalWrite(LED_4, LOW);
+  delay(1000);
+}
