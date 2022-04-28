@@ -1,0 +1,33 @@
+// C++ code
+// Curso: Engenharia de Controle e Automação
+// Aluno: Fábio Xavier Guedes Filho
+// Data: 28/04/2022
+
+#define RELE_A 12
+#define RELE_B 13
+
+int Estado_Rele = LOW;
+
+void Rele_function1(const int RELE, int Estado_Rele);
+
+void setup()
+{
+  pinMode(RELE_A, OUTPUT);
+  pinMode(RELE_B, OUTPUT);
+  // Garante o estado inicial dos reles
+  digitalWrite(RELE_A, HIGH);
+  digitalWrite(RELE_B, HIGH);
+}
+
+void loop()
+{
+  Estado_Rele = !Estado_Rele;
+  Rele_function1(RELE_A, Estado_Rele);
+}
+
+void Rele_function1(const int RELE, int ESTADO_RELE)
+{
+  digitalWrite(RELE, ESTADO_RELE);
+  delay(1000);
+}
+
