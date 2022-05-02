@@ -1,0 +1,31 @@
+// C++ code
+// Curso: Engenharia de Controle e Automação
+// Aluno: Fábio Xavier Guedes Filho
+// Data: 02/05/2022
+
+int buttonState1 = 0;
+int buttonState2 = 0;
+
+void setup()
+{
+  pinMode(2, INPUT);
+  pinMode(3, INPUT_PULLUP);
+  pinMode(LED_BUILTIN, OUTPUT);
+}
+
+void loop()
+{
+  buttonState1 = digitalRead(2);
+  buttonState2 = digitalRead(3);
+  
+  if (buttonState1 == HIGH) 
+  {
+   	digitalWrite(LED_BUILTIN, HIGH);
+  } 
+  else if(buttonState2 == LOW) // Atuação do PullUp
+  {
+    digitalWrite(LED_BUILTIN, LOW);
+  }
+  
+  delay(10); 
+}
