@@ -1,0 +1,35 @@
+// C++ code
+// Curso: Engenharia de Controle e Automação
+// Aluno: Fábio Xavier Guedes Filho
+// Data: 05/05/2022
+
+void primeiroEfeito(void);
+void segundoEfeito(void);
+
+
+void setup()
+{
+  DDRB = 0b00111100;
+}
+
+void loop()
+{
+  primeiroEfeito();
+  segundoEfeito();
+}
+
+void primeiroEfeito(void)
+{
+  PORTB = 0b00111100;
+  delay(1000);
+  PORTB = 0b00000000;
+  delay(1000);
+}
+
+void segundoEfeito(void)
+{
+  PORTB = 0b00011000;
+  delay(1000);
+  PORTB = 0b00100100;
+  delay(1000);
+}
