@@ -1,0 +1,18 @@
+// C++ code
+// Curso: Engenharia de Controle e Automação
+// Aluno: Fábio Xavier Guedes Filho
+// Data: 05/05/2022
+
+
+void setup()
+{
+  DDRB = 0b00100000; // PB5 (bit 5 do PORTB configurado como saída)
+}
+
+void loop()
+{
+  PORTB = 0b00100000; // bit 5 do PORTB ligado
+  delay(1000);
+  PORTB = 0b00000000; // bit 5 do PORTB desligado
+  delay(1000);
+}
