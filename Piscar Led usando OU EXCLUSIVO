@@ -1,0 +1,16 @@
+// C++ code
+// Curso: Engenharia de Controle e Automação
+// Aluno: Fábio Xavier Guedes Filho
+// Data: 09/05/2022
+
+
+void setup()
+{
+  DDRB = 0b00100000;
+}
+
+void loop()
+{
+  PORTB = PORTB ^ (1<<5); // ^ -> elemento que indica porta lógica OU EXCLUSIVO
+  delay(1000);
+}
