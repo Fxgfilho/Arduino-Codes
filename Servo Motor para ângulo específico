@@ -19,7 +19,11 @@ void loop()
   if(Serial.available()>0)
   {
     incomingByte = Serial.parseInt(); // lê do buffer o dado recebido
-    servo_9.write(incomingByte);
-    delay(50);
+    
+    for(pos = 0; pos <= incomingByte; pos += 1)
+    {
+      servo_9.write(pos);
+      delay(15);
+    }
   }
 }
