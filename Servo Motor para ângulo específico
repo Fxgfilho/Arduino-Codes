@@ -1,0 +1,25 @@
+// Aluno: Fábio Xavier Guedes Filho
+// Disciplina: Simtemas embarcados
+// Data: 19/05/22
+
+#include <Servo.h>
+
+int pos = 0;
+int incomingByte = 0;
+Servo servo_9;
+
+void setup()
+{
+  Serial.begin(9600);
+  servo_9.attach(9, 500, 2500);
+}
+
+void loop()
+{
+  if(Serial.available()>0)
+  {
+    incomingByte = Serial.parseInt(); // lê do buffer o dado recebido
+    servo_9.write(incomingByte);
+    delay(50);
+  }
+}
