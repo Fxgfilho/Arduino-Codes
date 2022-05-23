@@ -1,0 +1,22 @@
+// Aluno: Fábio Xavier Guedes Filho
+// Disciplina: Sistemas embarcados
+// Data: 23/05/22
+
+#include <Servo.h>
+
+int pos = 0;
+
+Servo servo_9;
+
+void setup()
+{
+  pinMode(A0, INPUT);
+  servo_9.attach(9, 500, 2500);
+}
+
+void loop()
+{
+  int sensorValue = analogRead(A0);
+  sensorValue = map(sensorValue, 0, 1023, 0, 180); // faz uma espécie de interpolação entre o ângulo do servo e os dados do potenciômetro
+  servo_9.write(sensorValue);
+}
