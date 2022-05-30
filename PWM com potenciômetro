@@ -1,0 +1,21 @@
+// Aluno: Fábio Xavier Guedes Filho
+// Disciplina: Sistemas embarcados
+// Data: 30/05/22
+
+void setup()
+{
+  pinMode(A0, INPUT);
+  pinMode(9, OUTPUT);
+  Serial.begin(9600);
+}
+
+void loop()
+{
+  // read the input on analog pin 0:
+  int sensorValue = analogRead(A0);
+  float brightness = sensorValue*(255.0 / 1023.0);
+  analogWrite(9, brightness);
+  // print out the value you read:
+  Serial.println(brightness);
+  delay(10); // Delay a little bit to improve simulation performance
+}
